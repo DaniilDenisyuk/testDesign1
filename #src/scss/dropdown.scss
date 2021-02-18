@@ -1,0 +1,37 @@
+.dropdown {
+   position: relative;
+   select {
+      display: none;
+   }
+   &__selected {
+      cursor: pointer;
+      position: relative;
+      padding-right: 25px;
+   }
+   .i-arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 100%;
+   }
+
+   &.active &__wrapper {
+      display: block;
+   }
+   &.active {
+      .i-arrow {
+         transform: translateY(-50%) rotate(180deg);
+      }
+   }
+   &__wrapper {
+      padding: 10px 10px 0px 10px;
+      background: rgba(62, 62, 62, 0.5);
+      position: absolute;
+      z-index: 2;
+      left: -10px;
+      display: none;
+      margin-top: 20px;
+   }
+}

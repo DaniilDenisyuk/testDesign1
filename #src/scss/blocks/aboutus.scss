@@ -1,0 +1,64 @@
+.aboutus {
+   padding: 0 16px;
+   &__chapter {
+      position: relative;
+      @include adaptiveValue("height", 380, 236, 1);
+   }
+
+   &__text-container {
+      background: rgba(62, 62, 62, 0.9);
+      position: absolute;
+      @include adaptiveValue("width", 750, 326, 1);
+      @include adaptiveValue("height", 260, 180, 1);
+      top: 50%;
+      text-align: left;
+      transform: translateY(-50%);
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         @include adaptiveValue("height", 212, 100, 1);
+         width: 2px;
+         background: #e4b56b;
+      }
+   }
+   &__text {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 18, 12, 1);
+      line-height: (23/18);
+      color: #ffffff;
+   }
+
+   &__heading {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 40, 20, 1);
+      color: #ffffff;
+      padding: relVal(30, 15) 0 relVal(35, 15) 0;
+   }
+}
+
+.ab-why {
+   img {
+      object-fit: cover;
+   }
+   &__tc {
+      left: 0;
+      padding: 0 relVal(115, 65) 0 relVal(90, 15);
+      &::after {
+         @include adaptiveValue("right", 60, 20, 1);
+      }
+   }
+}
+.ab-advantages {
+   img {
+      object-fit: cover;
+   }
+   margin-top: relVal(30, 20);
+   &__tc {
+      padding: 0 relVal(90, 15) 0 relVal(115, 65);
+      right: 0;
+      &::after {
+         @include adaptiveValue("left", 77, 20, 1);
+      }
+   }
+}

@@ -1,0 +1,140 @@
+.footer {
+   padding: 0 16px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+
+   &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: auto;
+      width: 1180px;
+      margin-top: 20px;
+   }
+   &__list {
+      height: 150px;
+      margin-left: -60px;
+      @media (max-width: 1000px) {
+      }
+   }
+
+   &__about {
+      @media (max-width: 1000px) {
+         flex: 30%;
+      }
+   }
+
+   &__section-name {
+      padding-bottom: 15px;
+      color: #3e3e3e;
+      font-size: 18px;
+   }
+
+   &__about-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+   }
+
+   &__list-item {
+      padding-top: 17px;
+      padding-left: 60px;
+      font-weight: 500;
+      font-size: 16px;
+      color: #aeaeae;
+      a {
+         position: relative;
+         &:before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            bottom: -5px;
+            background-color: rgba(228, 181, 107, 0.8);
+            display: none;
+         }
+         &:hover,
+         &.active {
+            &:before {
+               display: block;
+            }
+         }
+      }
+   }
+
+   &__services {
+      @media (max-width: 1000px) {
+         flex: 70%;
+         margin: 0;
+      }
+      margin-left: auto;
+      margin-right: 120px;
+   }
+
+   &__services-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+   }
+
+   &__contacts {
+      @media (max-width: 1000px) {
+         margin: 30px 0 10px 0;
+      }
+      margin-left: auto;
+      .footer__section-name {
+         padding-bottom: 9px;
+      }
+   }
+   &__contacts-list {
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 300;
+      color: #3e3e3e;
+      .cl-address {
+         line-height: 21px;
+      }
+      .cl-schedule {
+         padding-top: 15px;
+      }
+      .cl-phone {
+         padding-top: 15px;
+      }
+      @media (max-width: 750px) {
+         text-align: center;
+      }
+   }
+
+   &__socials {
+      padding-top: 15px;
+      align-self: center;
+      a {
+         display: inline-block;
+         margin-right: 15px;
+         &:hover {
+            transform: scale(1.2);
+         }
+         @media (max-width: 1000px) {
+            &:first-child {
+               margin-left: 15px;
+            }
+         }
+      }
+   }
+
+   &__copyright {
+      margin: 50px 0 20px 0;
+      font-size: 14px;
+      text-align: center;
+      color: #3e3e3e;
+      font-weight: 500;
+      p:last-child {
+         padding-top: 3px;
+         font-weight: bold;
+      }
+      @media (max-width: 1000px) {
+         margin: 0px 0 10px 0;
+      }
+   }
+}

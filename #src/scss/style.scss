@@ -1,0 +1,128 @@
+$maxWidthContainer: 1360;
+$minWidthContainer: 360;
+@import "fonts";
+@import "mixins";
+@import "functions";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/services";
+@import "blocks/aboutus";
+@import "icons";
+@import "dropdown";
+@import "reset";
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,500);
+$fontFamily: "Raleway";
+
+img {
+   max-width: 100%;
+   min-height: 100%;
+}
+
+a {
+   display: inline-block;
+}
+
+body {
+   background-color: black;
+   font-family: "Raleway";
+}
+
+.__container {
+   max-width: 1360px;
+   background-color: #fff;
+   margin: auto;
+}
+
+.banner-slider {
+   position: relative;
+   &__container {
+      width: 100%;
+      overflow: hidden;
+   }
+   &__wrapper {
+      display: inline-flex;
+   }
+   &__slide {
+   }
+   &__pagination {
+      position: absolute;
+      display: inline-flex;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      bottom: 15px;
+      [class*="bullet"] {
+         cursor: pointer;
+         margin: 0 relVal(7.5, 5);
+         @include adaptiveValue("width", 14, 8, 1);
+         @include adaptiveValue("height", 14, 8, 1);
+         border-radius: 50%;
+         background: #ffffff;
+         &[class*="active"] {
+            background: #e4b56b;
+         }
+      }
+   }
+}
+
+.bnr-slide {
+   flex: 0 1 auto;
+   @include adaptiveValue("height", 448, 216, 1);
+   background: url("../img/banner.png") center/cover no-repeat;
+   position: relative;
+   &__text-container {
+      @include adaptiveValue("width", 750, 252, 1);
+      @include adaptiveValue("height", 260, 110, 1);
+      @include adaptiveValue("padding-left", 90, 15, 1);
+      @include adaptiveValue("padding-right", 30, 15, 1);
+      @include adaptiveValue("padding-top", 65, 30, 1);
+      @include adaptiveValue("padding-bottom", 65, 30, 1);
+      background: rgba(62, 62, 62, 0.9);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 0;
+         height: 2px;
+         width: (635/750) * 100%;
+         transform: translateY(-50%);
+         background: rgba(228, 181, 107, 0.8);
+      }
+   }
+
+   &__text {
+      @include adaptiveValue("font-size", 38, 13, 1);
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.9;
+   }
+}
+.heading {
+   margin: relVal(30, 20) 0;
+   display: flex;
+   text-align: center;
+   flex-direction: column;
+   @include adaptiveValue("font-size", 40, 20, 1);
+   font-weight: 600;
+   color: #3e3e3e;
+   position: relative;
+   &::after {
+      align-self: center;
+      @include adaptiveValue("margin-top", 15, 10, 1);
+      content: "";
+      height: 2px;
+      width: 82px;
+      display: block;
+      background: #e4b56b;
+   }
+}
+
+.bg-gear {
+   background: url("../img/gear.svg") center center/cover no-repeat;
+}

@@ -1,0 +1,8 @@
+@function relVal($maxSize, $minSize) {
+   $addSize: $maxSize - $minSize;
+   $result: calc(
+      #{$minSize + px} + #{$addSize} *
+         ((100vw - #{$minWidthContainer + px}) /#{$maxWidthContainer - $minWidthContainer})
+   );
+   @return $result;
+}
